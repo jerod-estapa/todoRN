@@ -16,3 +16,27 @@ var {
 } = React;
 
 var Firebase = require('firebase');
+
+class devdacticFirebase extends Component {
+  //Your App Code
+  constructor(props) {
+    super(props);
+    var myFirebaseRef = new Firebase('http://<YOUR-FIREBASE-ID>.firebaseio.com');
+
+    myFirebaseRef.set({
+      title: "Hello World!",
+      author: "Jerod",
+      location: {
+        city: "Fort Collins",
+        state: "Colorado",
+        zip: 80524
+      }
+    });
+  }
+}
+
+var styles = StyleSheet.create({
+  //Your App Style
+});
+
+AppRegistry.registerComponent('devdacticFirebase', () => devdacticFirebase);
